@@ -1,0 +1,75 @@
+@import "../../scss/index.scss";
+
+.signin-signup {
+  &__left {
+    overflow: hidden;
+    min-height: 100vh;
+    background-color: $primary-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      position: absolute;
+      right: -35%;
+    }
+
+    div {
+      z-index: 1;
+
+      h2 {
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+        margin-bottom: 40px;
+        font-weight: bold;
+
+        svg {
+          margin-right: 20px;
+          font-size: 30px;
+          width: 40px !important;
+        }
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+
+    > div {
+      width: 500px;
+      margin: 0 auto;
+
+      img {
+        width: 100px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        font-weight: bold;
+        font-size: 40px;
+        margin-bottom: 70px;
+      }
+
+      h3 {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        border-radius: 50px;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px 0;
+
+        &:first-of-type {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

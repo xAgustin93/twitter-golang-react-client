@@ -1,0 +1,29 @@
+@import "../../scss/index.scss";
+
+.home {
+  &__title {
+    border-bottom: 1px solid $border-grey;
+    padding: 15px;
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 0;
+      font-weight: bold;
+    }
+  }
+
+  .load-more.btn.btn-primary {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: 0;
+
+    &:hover,
+    &focus {
+      background-color: transparent !important;
+      color: $primary;
+    }
+  }
+}

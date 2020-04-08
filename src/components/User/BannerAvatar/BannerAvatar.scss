@@ -1,0 +1,57 @@
+@import "../../../scss/index.scss";
+
+.banner-avatar {
+  position: relative;
+  background-color: $background-dark-light;
+  height: 220px;
+  margin-bottom: 60px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .avatar {
+    position: absolute;
+    bottom: -50px;
+    left: 20px;
+    background-color: $background-dark-light;
+    width: 150px;
+    height: 150px;
+    border: 4px solid $border-dark;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .options {
+    position: absolute;
+    bottom: -50px;
+    right: 15px;
+
+    button {
+      border-radius: 50px;
+      background-color: $primary;
+      width: 150px;
+
+      &:hover {
+        background-color: $primary;
+        opacity: 0.6;
+      }
+
+      &.unfollow {
+        &:hover {
+          border-color: $danger;
+          background-color: $danger;
+
+          &::before {
+            content: "Deja de seguir";
+          }
+
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

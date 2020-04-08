@@ -1,0 +1,48 @@
+@import "../../../scss/index.scss";
+
+.info-user {
+  margin: 20px;
+
+  * {
+    margin: 0;
+  }
+
+  svg {
+    width: 15px;
+    height: 15px;
+    fill: $font-grey;
+  }
+
+  .name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .email {
+    font-size: 14px;
+    color: $font-grey;
+  }
+
+  .description {
+    margin: 10px 0;
+    white-space: pre-line;
+  }
+
+  .more-info {
+    display: flex;
+    align-items: center;
+
+    p,
+    a {
+      color: $font-grey;
+      padding-right: 20px;
+
+      svg {
+        margin-right: 10px;
+      }
+    }
+
+    a {
+      color: $primary;
+    }
+  }
+}

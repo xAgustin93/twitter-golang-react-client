@@ -1,0 +1,26 @@
+@import "../../scss/index.scss";
+
+.list-tweets {
+  .tweet {
+    display: flex;
+    padding: 10px 20px;
+    border-bottom: 1px solid $border-grey;
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+    }
+
+    .name {
+      font-weight: bold;
+
+      span {
+        margin-left: 10px;
+        font-size: 12px;
+        font-weight: normal;
+        color: $font-grey;
+      }
+    }
+  }
+}

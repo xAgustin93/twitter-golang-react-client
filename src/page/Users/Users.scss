@@ -1,0 +1,76 @@
+@import "../../scss/index.scss";
+
+.users {
+  &__title {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 0;
+      font-weight: bold;
+    }
+
+    input {
+      width: 50%;
+      border-radius: 50px;
+      border: 0;
+      background-color: $background-dark-light;
+      padding: 5px 20px;
+      color: $font-light;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__options {
+    display: flex !important;
+
+    .btn.btn-primary {
+      background-color: transparent !important;
+      font-weight: bold;
+      border: 0;
+      border-bottom: 1px solid $border-grey;
+      padding: 15px 0;
+      border-radius: 0;
+
+      &:hover {
+        background-color: rgba(29, 161, 242, 0.1) !important;
+      }
+      &.active {
+        border-bottom: 3px solid $primary;
+      }
+    }
+  }
+
+  &__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+
+    > div {
+      margin-bottom: 10px;
+    }
+  }
+
+  .load-more.btn.btn-primary {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: 0;
+
+    &:hover,
+    &:focus {
+      background-color: transparent !important;
+      color: $primary;
+    }
+  }
+}

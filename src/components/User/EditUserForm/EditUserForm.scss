@@ -1,0 +1,69 @@
+@import "../../../scss/index.scss";
+
+.edit-user-form {
+  .banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    background-color: $background-dark-light;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: -20px !important;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    svg {
+      width: 30px;
+      fill: $font-light;
+      &:hover {
+        fill: $font-dark;
+      }
+    }
+  }
+
+  .avatar {
+    position: relative;
+    top: -50px;
+    left: 20px;
+    background-color: $background-dark-light;
+    width: 120px;
+    height: 120px;
+    border: 4px solid $border-dark;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    svg {
+      width: 30px;
+      fill: $font-light;
+      &:hover {
+        fill: $font-dark;
+      }
+    }
+  }
+
+  form {
+    padding: 0 20px 20px 20px;
+
+    .btn-submit {
+      position: absolute;
+      top: -44px;
+      right: 25px;
+      border-radius: 50px;
+      font-size: 16px;
+      padding: 4px 15px 4px 15px;
+    }
+  }
+}
