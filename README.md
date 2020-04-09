@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React JS, Golang y MongoDB: Creando Red Social como Twitter
 
-## Available Scripts
+_Curso en Udemy donde se explica paso a paso la creacion de una Red Social._
 
-In the project directory, you can run:
+**Curso:** https://courses.agustinnavarrogaldon.com/react-golang-twitter
 
-### `yarn start`
+## Comenzando 🚀
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+_En este curso vas a aprender a **crear una aplicación web de como Twitter** donde tendremos las siguientes caracteristicas._
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+**Perfil de usuario**
+_Podremos ver nuestro propio perfil donde tendremos datos del usuario, avatar, bañera y un los tweets del usuario y podremos visitar el perfil de otros usuarios, pero solo se podrá editar el perfil de usuario de uno mismo._
 
-### `yarn test`
+**Sistema de Followers**
+_Podremos seguir Y dejar de seguir a otros usuarios que estén registrados en la aplicación y tendremos una lista de usuarios para ver a quien estamos siguiendo en todo momento._
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Sistema de Tweets**
+_Podremos mandar tweets en cualquier momento y desde cualquier página de nuestra aplicación y cuando visitemos el perfil de otro usuario podremos ver todos sus tweets._
 
-### `yarn build`
+**Buscador de usuarios**
+_Podremos buscar usuarios por su nombre y filtrar la búsqueda entre usuarios que no estamos siguiendo o usuarios que estamos siguiendo._
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Feed de Tweets**
+_Tendremos una pagina donde podremos ver los últimos tweets que han enviado los usuarios que estamos siguiendo._
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+_Este curso tiene como objetivo enseñarte a desarrollar cualquier tipo de aplicación de web usando Golang en el backend y React en el frontend._
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Estructura del curso
 
-### `yarn eject`
+- ¡La Biblioteca creada por Facebook! REACT JS
+- Añadiremos SASS al proyecto
+- Sistema de Login y Registro con JWR
+- Enrutamiento con React Router Dom
+- Subiremos imágenes al servidor usando Drag & Drop
+- Consumir un API REST
+- Subir la web a Netlify y GitHub Pages
+- El BackEnd será desarrollado en GO (creado por Google)
+- Incorporaremos los patrones de JWT (Jason Web Token)
+- Incorporaremos bCrypt para encriptar nuestras passwords
+- Utilizaremos la BD MongoDB, en su versión gratuita que se autoalojará en AWS (Amazon Web Services)
+- Estructuraremos nuestro proyecto de acuerdo a los estándares requeridos por google para las aplicaciones GOLANG
+- Crearemos 16 EndPoints, más de 30 archivos .GO para armar una API Rest muy versatil y potente.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+⌨️ con ❤️ por [xAgustin93](https://github.com/xAgustin93) 😊
