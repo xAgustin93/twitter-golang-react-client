@@ -13,19 +13,21 @@ export default function Home(props) {
   const [loadingTweets, setLoadingTweets] = useState(false);
 
   useEffect(() => {
-    getTweetsFollowersApi(page).then((response) => {
-      if (!tweets && response) {
-        setTweets(formatModel(response));
-      } else {
-        if (!response) {
-          setLoadingTweets(0);
+    getTweetsFollowersApi(page)
+      .then((response) => {
+        if (!tweets && response) {
+          setTweets(formatModel(response));
         } else {
-          const data = formatModel(response);
-          setTweets([...tweets, ...data]);
-          setLoadingTweets(false);
+          if (!response) {
+            setLoadingTweets(0);
+          } else {
+            const data = formatModel(response);
+            setTweets([...tweets, ...data]);
+            setLoadingTweets(false);
+          }
         }
-      }
-    });
+      })
+      .catch(() => {});
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
@@ -45,7 +47,7 @@ export default function Home(props) {
           loadingTweets !== 0 ? (
             "Obtener más Tweets"
           ) : (
-            "No hay mas Tweets"
+            "No hay más tweets"
           )
         ) : (
           <Spinner
