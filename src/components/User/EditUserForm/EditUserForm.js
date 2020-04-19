@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { Form, Button, Row, Col, Spinner } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import es from "date-fns/locale/es";
 import { useDropzone } from "react-dropzone";
@@ -9,7 +9,7 @@ import { Camera } from "../../../utils/Icons";
 import {
   uploadBannerApi,
   uploadAvatarApi,
-  updateInfoApi
+  updateInfoApi,
 } from "../../../api/user";
 
 import "./EditUserForm.scss";
@@ -25,67 +25,69 @@ export default function EditUserForm(props) {
     user?.avatar ? `${API_HOST}/obtenerAvatar?id=${user.id}` : null
   );
   const [avatarFile, setAvatarFile] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const onDropBanner = useCallback(acceptedFile => {
+  const onDropBanner = useCallback((acceptedFile) => {
     const file = acceptedFile[0];
     setBannerUrl(URL.createObjectURL(file));
     setBannerFile(file);
   });
   const {
     getRootProps: getRootBannerProps,
-    getInputProps: getInputBannerProps
+    getInputProps: getInputBannerProps,
   } = useDropzone({
     accept: "image/jpeg, image/png",
     noKeyboard: true,
     multiple: false,
-    onDrop: onDropBanner
+    onDrop: onDropBanner,
   });
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const onDropAvatar = useCallback(acceptedFile => {
+  const onDropAvatar = useCallback((acceptedFile) => {
     const file = acceptedFile[0];
     setAvatarUrl(URL.createObjectURL(file));
     setAvatarFile(file);
   });
   const {
     getRootProps: getRootAvatarProps,
-    getInputProps: getInputAvatarProps
+    getInputProps: getInputAvatarProps,
   } = useDropzone({
     accept: "image/jpeg, image/png",
     noKeyboard: true,
     multiple: false,
-    onDrop: onDropAvatar
+    onDrop: onDropAvatar,
   });
 
-  const onChange = e => {
+  const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const onSubmit = e => {
+  const onSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     if (bannerFile) {
-      uploadBannerApi(bannerFile).catch(() => {
+      await uploadBannerApi(bannerFile).catch(() => {
         toast.error("Error al subir el nuevo banner");
       });
     }
     if (avatarFile) {
-      uploadAvatarApi(avatarFile).catch(() => {
+      await uploadAvatarApi(avatarFile).catch(() => {
         toast.error("Error al subir el nuevo avatar");
       });
     }
 
-    updateInfoApi(formData)
+    await updateInfoApi(formData)
       .then(() => {
         setShowModal(false);
       })
       .catch(() => {
         toast.error("Error al actualizar los datos");
-      })
-      .finally(() => {
-        window.location.reload();
       });
+
+    setLoading(false);
+    window.location.reload();
   };
 
   return (
@@ -159,14 +161,14 @@ export default function EditUserForm(props) {
             placeholder="Fecha de nacimiento"
             locale={es}
             selected={new Date(formData.fechaNacimiento)}
-            onChange={value =>
+            onChange={(value) =>
               setFormData({ ...formData, fechaNacimiento: value })
             }
           />
         </Form.Group>
 
         <Button className="btn-submit" variant="primary" type="submit">
-          Actualizar
+          {loading && <Spinner animation="border" size="sm" />} Actualizar
         </Button>
       </Form>
     </div>
@@ -180,6 +182,6 @@ function initialValue(user) {
     biografia: user.biografia || "",
     ubicacion: user.ubicacion || "",
     sitioWeb: user.sitioWeb || "",
-    fechaNacimiento: user.fechaNacimiento || ""
+    fechaNacimiento: user.fechaNacimiento || "",
   };
 }
