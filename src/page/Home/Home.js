@@ -14,7 +14,7 @@ export default function Home(props) {
 
   useEffect(() => {
     getTweetsFollowersApi(page).then((response) => {
-      if (!tweets) {
+      if (!tweets && response) {
         setTweets(formatModel(response));
       } else {
         if (!response) {
@@ -42,7 +42,11 @@ export default function Home(props) {
       {tweets && <ListTweets tweets={tweets} />}
       <Button onClick={moreData} className="load-more">
         {!loadingTweets ? (
-          loadingTweets !== 0 && "Obtener más Tweets"
+          loadingTweets !== 0 ? (
+            "Obtener más Tweets"
+          ) : (
+            "No hay mas Tweets"
+          )
         ) : (
           <Spinner
             as="span"
